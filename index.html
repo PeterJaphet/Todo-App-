@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO Application</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/93af037d76.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">TODO APP</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Log In</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+    <section class="main">
+      <div class="container">
+        <!-- <div class="upcoming">
+          <div class="top">
+            <i class="fa-solid fa-bars-progress"></i>
+            <h3>UPCOMING TASK</h3>
+          </div>
+          <ul class="upcomingTask"></ul>
+        </div> -->
+        <div class="taskInputs">
+        <div class="card">
+          <div class="upper">
+            <input type="text" class="input1" placeholder="Enter a Task" />
+              <span
+                class="icon black"
+                id="timeIcon"
+                onclick="document.getElementById('duration').style.display='block'"
+                ><i class="fa-solid fa-clock"></i
+              ></span>
+            <div class="modal" id="duration">
+              <div class="modalContent">
+                <span
+                  class="close"
+                  id="cls"
+                  onclick="document.getElementById('duration').style.display='none'"
+                  ><i class="fa-solid fa-times"></i
+                ></span>
+                <p>Select Duration for task</p>
+                <div class="dateF">
+                <label for="">Start</label>
+                <input type="text" class="date" id="start" placeholder="Start" onblur="(this.type='datetime-local')"/>
+                </div>
+                <div class="dateF">
+                <label for="">Finish</label>
+                <input type="text" class="date" id="end" placeholder="Finish" onfocus="(this.type='datetime-local')"/>
+                </div>
+                <button
+                  onclick="document.getElementById('duration').style.display='none'"
+                  id="dateOk"
+                >
+                  Ok
+                </button>
+              </div>
+            </div>
+            <span class="icon green" id="add"
+              ><i class="fa-solid fa-plus"></i
+            ></span>
+          </div>
+          <!-- <h2>MY TASKS</h2> -->
+          <!-- <ul class="task"></ul> -->
+          <div class="modal" id="mod1">
+            <div class="modalContent">
+              <span
+                class="close"
+                id="cls"
+                onclick="document.getElementById('mod1').style.display='none'"
+                ><i class="fa-solid fa-times"></i
+              ></span>
+              <p>Are you sure you want to delete?</p>
+              <button id="del">Yes</button>
+              <button
+                onclick="document.getElementById('mod1').style.display='none'"
+                id="no"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul class="task"></ul>
+    </div>
+        <div class="taskComplete">
+        <div class="complete">
+          <div class="top">
+            <i class="fa-solid fa-list-check"></i>
+            <h3>COMPLETED TASK</h3>
+          </div>
+        </div>
+        <ul class="completedTask"></ul>
+    </div>
+      </div>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>

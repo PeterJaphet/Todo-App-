@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  margin-bottom: 15px;
+}
+
+.navbar {
+  height: 50px;
+  color: white;
+  background-color: #1e6468;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.navbar.active {
+  background-color: #000;
+}
+
+.container .logo {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0px 10px;
+  /* position: fixed; */
+  z-index: 2;
+  position: relative;
+}
+.hamburger {
+  cursor: pointer;
+  display: block;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active .bar:nth-of-type(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-of-type(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-of-type(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar ul {
+  position: fixed;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  top: -100%;
+  left: 0;
+  /* justify-content: space-between; */
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+  /* background-color: #1e6468; */
+  background-color: black;
+  padding: 20px 0;
+  z-index: -1;
+}
+.navbar li {
+  z-index: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: 15px 0px;
+  font-size: 16px;
+}
+
+a:hover {
+  /* color: #077fdb; */
+  color: rgb(72, 158, 187);
+  width: 100%;
+}
+
+.navbar ul.active {
+  top: 50px;
+  left: 0;
+}
+
+.main {
+  min-height: calc(100vh - 100px);
+  /* max-width: calc(100vw); */
+  overflow: auto;
+  position: relative;
+  top: 80px;
+  z-index: 0;
+  padding-bottom: 30px;
+}
+
+.main .container {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+   gap:20px;
+  padding: 0px 10px;
+  /* position: relative; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  
+  /* overflow: auto;  */
+}
+
+.main .container .upcoming {
+  background-color: rgba(207, 35, 35, 0.8);
+  border-radius: 1rem;
+  /* width: 400px; */
+  padding: 20px 10px;
+  color: white;
+}
+.top i {
+  margin-right: 8px;
+}
+
+.main .container .upcoming .check:hover {
+  color: black;
+}
+
+.container .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+/* .completedTask{
+  color:#fff;
+} */
+
+.main .container .complete {
+  background-color: #4e9da1;
+  border-radius: 1rem;
+  width: 400px;
+  padding: 10px 10px;
+  color: white;
+}
+
+.container .taskInputs, .taskComplete{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+ 
+}
+.container .taskInputs{
+  width:700px;
+}
+
+.container .taskComplete{
+  width:400px;
+}
+
+.card {
+  width: 100%;
+  background-color: rgb(204, 213, 216, 0.5);
+  border-radius: 1rem;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.upper {
+  display: flex;
+  align-items: center;
+}
+.upper .input1 {
+  width: 80%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid rgb(240, 237, 237);
+  border-radius: 0.5rem;
+  height: 40px;
+  outline: none;
+}
+
+.upper #sel {
+  display: none;
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.green {
+  margin-left: 15px;
+  color: green;
+  cursor: pointer;
+}
+.black {
+  margin-left: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+.tasks {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  margin-top: 10px;
+  background-color:rgb(204, 213, 216, 0.7);
+  border-radius:5rem;
+}
+
+.tasks .time {
+  width: 30px;
+  height: 30px;
+  /* background-color:aquamarine; */
+  outline: none;
+}
+
+.tasks .check {
+  /* width:40px;
+  height:40px;
+  background-color: aquamarine; */
+  font-size: 20px;
+}
+
+.tasks .check:hover {
+  color: red;
+}
+
+.tasks p {
+  flex: 1;
+  margin-left: 0.7rem;
+  word-break: break-all;
+}
+
+.task {
+  position: relative;
+  /* margin-top: 50px; */
+}
+
+.completed {
+  color: rgba(65, 64, 64, 0.8);
+  text-decoration: line-through;
+}
+
+.card h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.modal {
+  z-index: 3;
+  display: none;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top: 0;
+}
+
+.date {
+  font-size: 16px;
+  border-radius: 0.6rem;
+  padding: 5px 10px;
+  border: 1px solid lightslategray;
+}
+
+.modalContent {
+  background-color: aliceblue;
+  display: block;
+  position: relative;
+  margin: 300px auto;
+  width: 50%;
+  padding: 50px 0;
+  border-radius: 0.8rem;
+}
+
+#duration p {
+  margin-bottom: 30px;
+}
+
+#duration .dateF {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 25px;
+  gap: 30px;
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+}
+
+.close:hover {
+  background-color: red;
+  color: aliceblue;
+}
+
+.modalContent button {
+  margin-top: 40px;
+  margin-right: 10px;
+  font-size: 16px;
+  padding: 8px;
+  width: 100px;
+  background-color: #4e9da1;
+  border-radius: 0.8rem;
+  border: 2px solid rgb(167, 193, 202);
+  cursor: pointer;
+  color:#fff
+}
+
+.modalContent button:hover {
+  /* background-color: rgb(156, 63, 63); */
+  color: aliceblue;
+  opacity:0.9;
+}
+.modalContent #del:hover {
+  /* background-color: rgb(117, 185, 117); */
+  background-color: rgb(156, 63, 63);
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .main .container {
+    flex-direction: column;
+    margin: 10px;
+    padding: 0;
+    gap:20px; 
+  }
+
+  .main .container .complete,
+  .card {
+    width: 100%;
+  }
+  .container .taskInputs, .taskComplete{
+    max-width:100%;
+  }
+
+  .modalContent {
+    width: 90%;
+    margin: 250px auto;
+    
+  }
+  .main .container .complete{
+    margin-top: 30px;
+  }
+
+  #duration .dateF {
+     justify-content: space-between;
+  margin: 10px 25px;
+}
+}
